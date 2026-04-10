@@ -1,0 +1,1339 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<style>
+
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+}
+
+.menu{
+  display:flex;
+  gap:30px;
+  margin-left:auto;
+  flex-wrap:nowrap;      /* ❌ KHÔNG cho xuống dòng */
+}
+
+.menu a{
+  white-space:nowrap;    /* ❌ chữ không bị xuống dòng */
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.hero-banner{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 360px;
+  padding: 0 50px;
+  background: #f5f5f5;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.hero-banner {
+  position: relative;
+}
+
+/* chữ ch
+.promo-text {
+  position: absolute;
+  top: 10px; /* chỉnh cao thấp ở đây */
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.promo-text marquee {
+  color: red;
+  font-size: 18px; /* chữ to */
+  font-weight: bold;
+}
+
+
+.hero-text{
+  z-index: 2;
+  max-width: 420px;
+}
+
+.hero-text h1{
+  margin: 0 0 10px;
+  font-size: 42px;
+  color: #222;
+}
+
+.hero-text p{
+  margin: 0;
+  font-size: 18px;
+  color: #666;
+}
+
+.hero-banner img{
+  height: 280px;
+  object-fit: contain;
+  transition: all 0.5s ease;
+}
+
+.banner-dots{
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5e1;
+}
+
+.dot.active{
+  background: #1d4ed8;
+}
+
+.site-footer{
+  background: #0f172a;   /* nền đen xanh đậm đẹp */
+  color: #ffffff;
+  padding: 40px 20px;
+}
+
+.site-footer h3{
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.site-footer p{
+  color: #cbd5e1;   /* chữ xám nhẹ cho dễ nhìn */
+  margin: 5px 0;
+}
+
+.footer-col{
+  margin-bottom: 20px;
+}
+
+
+/* Header bảng */
+.price-table th{
+  background: linear-gradient(135deg, #1e3a8a);
+  color: #ffffff;
+  padding: 12px;
+  font-weight: 600;
+}
+
+/* FULL bảng xanh đậm */
+.product .price-table table{
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  
+}
+
+/* Header */
+.product .price-table th{
+   color: #ffffff;
+  padding: 12px;
+  border: 1px solid #1e3a8a;
+}
+
+/* CHỈ đổi màu chữ */
+.product .price-table td{
+  color: #0f172a; /* xanh đậm */
+}
+
+/* Cột giá xe (cột thứ 2) */
+.price-table td:nth-child(2){
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+/* Cột khuyến mãi (cột thứ 3) */
+.price-table td:nth-child(3){
+  color: #dc2626; /* đỏ cho nổi */
+  font-weight: bold;
+font-size: 15px;
+}
+
+/* Viền bảng mờ nhẹ */
+.product .price-table th,
+.product .price-table td{
+  border: 1px solid #e5e7eb; /* xám nhạt */
+}
+
+.site-footer{
+  background:#0f172a;
+  color:#fff;
+  padding:35px 25px;
+}
+
+.site-footer{
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap:30px;
+  align-items:start;
+}
+@media (max-width: 768px) {
+  .site-footer {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 768px) {
+  .site-footer {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.footer-col h3{
+  margin:0 0 12px;
+  color:#fff;
+}
+
+.footer-col p{
+  margin:6px 0;
+  color:#e5e7eb;
+  line-height:1.6;
+}
+
+.promo-text {
+  background: #fff3f3;
+  padding: 8px 0;
+}
+.promo-text {
+  margin-top: 10px;
+}
+.hero-banner {
+  position: relative;
+}
+
+.promo-text {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  z-index: 10;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* căn giữa theo chiều dọc */
+  height: 100%;
+}
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+
+.hero-text h1 {
+  font-size: 38px; /* tăng size chữ */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 16px;
+}
+
+.hero-banner {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* chữ 1/3 - ảnh 2/3 */
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-banner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 26px;
+  min-height: 400px; /* QUAN TRỌNG */
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* giữa dọc */
+  align-items: center;     /* giữa ngang */
+  text-align: center;
+  color: #0b2c5f;          /* xanh đậm */
+}
+
+.hero-text h1 {
+  color: #0b2c5f !important;
+}
+
+.hero-text p {
+  color: #0b2c5f;
+}
+
+.brand-text strong {
+  font-size: 30px !important;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brand-text span {
+  font-size: 18px !important;
+}
+
+.menu a {
+  font-size: 16px !important;
+  font-weight: 600;
+}
+
+
+
+.hero-banner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center; /* căn giữa toàn bộ */
+  min-height: 400px;   /* QUAN TRỌNG: phải có chiều cao */
+}
+
+
+.zalo-float{
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #0088ff;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+    /* Khuyến mãi */
+    .promo-text {
+        font-size: 13px;
+        padding: 5px;
+    }
+
+    /* Tiêu đề sản phẩm */
+    h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    /* Thanh nút dưới */
+    .contact-bar {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .contact-bar a {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+
+.promo-text {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.promo-text span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: chạy 18s linear infinite;
+}
+
+@keyframes chạy {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+
+
+
+    /* Chữ khuyến mãi */
+    .promo-text {
+        font-size: 13px !important;
+        padding: 6px 0 !important;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .promo-text marquee {
+        font-size: 15px !important;
+        scroll-behavior: smooth;
+    }
+
+    /* Nếu bạn đang dùng span chạy bằng animation */
+    .promo-text span {
+        animation-duration: 18s !important;
+    }
+
+    /* Banner / slider */
+    .hero-slider,
+    .hero-banner,
+    .slide {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 18px 14px 24px !important;
+        gap: 14px !important;
+        min-height: auto !important;
+    }
+
+    .slide-left,
+    .hero-left,
+    .hero-text {
+        width: 100% !important;
+        text-align: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        order: 1;
+    }
+
+    .slide-left h1,
+    .hero-left h1,
+    .hero-text h1,
+    #bannerTitle {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+        margin: 0 0 10px !important;
+        text-align: center !important;
+    }
+
+    .slide-left p,
+    .hero-left p,
+    .hero-text p,
+    #bannerDesc {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+    .slide-right,
+    .hero-right {
+        width: 100% !important;
+        text-align: center !important;
+        order: 2;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .slide-right img,
+    .hero-right img,
+    #bannerImg {
+        width: 92% !important;
+        max-width: 92% !important;
+        height: auto !important;
+        max-height: 220px !important;
+        object-fit: contain !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    /* Nút slider nếu có */
+    .slider-btn {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 18px !important;
+    }
+
+    .slider-dots {
+        bottom: 10px !important;
+    }
+
+    /* Nút liên hệ dưới cùng */
+    .contact-bar {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        padding: 14px 10px !important;
+    }
+
+    .contact-bar a,
+    .bottom-contact a,
+    .floating-buttons a {
+        font-size: 14px !important;
+        padding: 12px 16px !important;
+min-width: 140px;
+        text-align: center !important;
+    }
+}
+
+.promo-text {
+    background: #ffecec;
+    color: red;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 0;
+}
+
+}
+@media (max-width: 768px) {
+  .hero-banner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 16px 12px 24px !important;
+    background: #f3f3f3 !important;
+  }
+
+  #bannerImg {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    margin: 0 auto 16px !important;
+    display: block !important;
+  }
+
+  .hero-text {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  #bannerTitle {
+    font-size: 26px !important;
+    margin-bottom: 8px !important;
+  }
+
+  #bannerDesc {
+    font-size: 15px !important;
+ }
+
+.product-item {
+  width: 50%;
+}
+
+.price-table td:last-child {
+  text-align: center !important;
+  display: table-cell !important;
+  vertical-align: middle !important;
+}
+
+.km {
+  text-align: center !important;
+  color: #dc2626 !important;
+  font-weight: bold;
+}
+.price-table td {
+  vertical-align: middle !important;
+}
+
+.price-table td {
+  padding: 10px !important;
+}
+
+.price-table td:nth-child(1) {
+  width: 50%;
+}
+
+.price-table td:nth-child(2),
+.price-table td:nth-child(3) {
+  width: 25%;
+  text-align: center;
+}
+
+ promo-text marquee {
+  font-size: 18px !important;   /* vừa mắt mobile */
+  color: red !important;        /* màu khuyến mãi */
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .promo-text marquee {
+    font-size: 16px !important;
+  }
+}
+
+
+
+
+</style>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sản phẩm - Hyundai Bình Dương</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    #bannerTitle {
+      font-size: 26px !important;
+      margin-bottom: 8px !important;
+    }
+
+    #bannerDesc {
+      font-size: 15px !important;
+    }
+
+    .product-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 20px !important;
+    }
+
+    .products {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 20px !important;
+}
+
+.product {
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: 1fr !important;
+  }
+}
+.price-table td:nth-child(3) {
+  text-align: center !important;
+  color: #dc2626 !important;
+  font-weight: bold;
+}
+
+.price-table td {
+  vertical-align: middle !important;
+}
+
+.price-table td {
+  padding: 10px !important;
+}
+
+.price-table td:nth-child(1) {
+  width: 50%;
+}
+
+.price-table td:nth-child(2),
+.price-table td:nth-child(3) {
+  width: 25%;
+  text-align: center;
+}
+
+
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+
+  <header class="topbar">
+    <div class="container row">
+      <div class="brand">
+        <div class="brand-mark">H</div>
+        <div class="brand-text">
+          <strong>Hyundai Bình Dương</strong>
+          <span>Hotline • 0943533613 Thanh Thủy</span>
+        </div>
+	</div>
+
+           <nav class="menu">
+        <a href="#san-pham">Sản phẩm</a>
+        <a href="https://zalo.me/0943533613" target="_blank">Báo giá</a>
+	       <a href="https://zalo.me/0943533613" target="_blank">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  
+<section class="hero-banner">
+
+  <!-- CHỮ CHẠY -->
+  <div class="promo-text">
+   <marquee scrollamount="2" style="color:red; font-weight:bold;">
+  🎉 KHUYẾN MÃI: TỪ NGÀY 11/4/2026 (đến khi có thông báo mới) GIẢM GIÁ LÊN ĐẾN 170 TRIỆU ĐỒNG + QUÀ TẶNG + BẢO HIỂM (liên hệ 0943.533.613 để đượctư vấn chi tiết)🎉
+</marquee>
+
+  </div>
+
+  <div class="hero-text">
+    <h1 id="bannerTitle">HYUNDAI TUCSON</h1>
+    <p id="bannerDesc">Thiết kế hiện đại.</p>
+  </div>
+
+  <img id="bannerImg" src="images/tucson.png">
+
+</section>
+
+ 
+
+  <div class="banner-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+   
+  </section>
+
+  <section class="section" id="san-pham">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Sản phẩm</h2>
+          
+        </div>
+        <input id="searchInput" class="search" type="text" placeholder="Tìm mẫu xe..." />
+      </div>
+
+      <div class="products">
+          <article class="product" data-name="Grand i10 Sedan">
+      <img src="images/grand-i10-sedan.png" alt="Grand i10 Sedan">
+      <h3>Grand i10 Sedan</h3>
+      <p class="price">455.000.000 VNĐ</p>
+      <p class="meta">Sedan nhỏ gọn, tiết kiệm, 5 màu: bạc - đỏ - trắng - vàng cát - xanh.</p>
+     <section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse; width:100%;">
+    <thead>
+<tr>
+        <th>Phiên bản</th>
+	  <th>Giá xe</th>
+        	  <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hyundai Grand i10 Sedan MT TC</td>
+        <td style="text-align:right;">380,000,000&nbsp;VND</td>
+      </tr>
+      <tr>
+        <td>Hyundai Grand i10 Sedan AT TC</td>
+        <td style="text-align:right;">425,000,000&nbsp;VND</td>
+	
+      </tr>
+      <tr>
+        <td>Hyundai Grand i10 Sedan AT</td>
+        <td style="text-align:right;">455,000,000&nbsp;VND</td>
+	 <td class="km">25,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+   <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+
+ 
+    </article>
+
+ <article class="product" data-name="Grand i10 Hatchback">
+      <img src="images/grand-i10-hatchback.png" alt="Grand i10 Hatchback">
+      <h3>Grand i10 Hatchback</h3>
+      <p class="price">435.000.000 VNĐ</p>
+      <p class="meta">Nhỏ gọn, linh hoạt trong đô thị, 5 màu: đỏ tươi - xanh dương - bạc - vàng cát - trắng.</p>
+<section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse; width:100%;">
+    <thead>
+      <tr>
+        <th>Phiên bản</th>
+        <th>Giá xe</th>
+	 <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hyundai Grand i10 1.2 MT TC</td>
+        <td style="text-align:right;">360,000,000&nbsp;VND</td>
+      </tr>
+      <tr>
+        <td>Hyundai Grand i10 1.2 AT TC</td>
+        <td style="text-align:right;">405,000,000&nbsp;VND</td>
+      </tr>
+      <tr>
+        <td>Hyundai Grand i10 1.2 AT</td>
+        <td style="text-align:right;">435,000,000&nbsp;VND</td>
+	 <td>10,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+       <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+    </article>
+    
+    <article class="product" data-name="Hyundai Accent">
+      <img src="images/accent.png" alt="Hyundai Accent">
+      <h3>Hyundai Accent</h3>
+      <p class="price">439.000.000 VNĐ</p>
+      <p class="meta"> Xe sedan, thể thao, sang trọng, 7 màu: đen - XD - đỏ tươi - ghi vàng - bạc - vàng cát - trắng.</p>
+<section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse; width:100%;">
+    <thead>
+      <tr>
+       <th>Phiên bản</th>
+        <th>Giá xe</th>
+	 <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hyundai Accent 1.5 MT TC</td>
+        <td style="text-align:right;">439,000,000&nbsp;VND</td>
+	<td>20,000,000</td>
+      </tr>
+      <tr>
+        <td>Hyundai Accent 1.5 AT</td>
+        <td style="text-align:right;">489,000,000&nbsp;VND</td>
+	<td>21,000,000</td>
+      </tr>
+      <tr>
+        <td>Hyundai Accent 1.5 AT Đặc biệt</td>
+        <td style="text-align:right;">529,000,000&nbsp;VND</td>
+	<td>27,000,000</td>
+      </tr>
+      <tr>
+        <td>Hyundai Accent 1.5 AT Cao cấp</td>
+        <td style="text-align:right;">569,000,000&nbsp;VND</td>
+	<td>23,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+   <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+    </article>
+    
+    <article class="product" data-name="Hyundai Creta">
+      <img src="images/creta.png" alt="Hyundai Creta">
+      <h3>Hyundai Creta</h3>
+      <p class="price">599.000.000 VNĐ</p>
+      <p class="meta">SUV 5 chổ, 6 màu: đen - xanh dương - bạc - đỏ - trắng - xám kim loại.</p>
+<section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse; width:100%;">
+    <thead>
+      <tr>
+       <th>Phiên bản</th>
+        <th>Giá xe</th>
+	 <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Creta 1.5L TC</td>
+        <td style="text-align:right;">599,000,000&nbsp;VND</td>
+	<td>22,000,000</td>
+      </tr>
+      <tr>
+        <td>Creta 1.5L Đặc biệt</td>
+        <td style="text-align:right;">659,000,000&nbsp;VND</td>
+	<td>24,000,000</td>
+      </tr>
+      <tr>
+        <td>Creta 1.5L Cao cấp</td>
+        <td style="text-align:right;">705,000,000&nbsp;VND</td>
+	<td>25,000,000</td>
+      </tr>
+      <tr>
+        <td>Creta N Line</td>
+        <td style="text-align:right;">715,000,000&nbsp;VND</td>
+	<td>25,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+     <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+
+    </article>
+
+	<article class="product" data-name="Hyundai Venue">
+      <img src="images/venue.png" alt="Hyundai Venue">
+      <h3>Hyundai Venue</h3>
+      <p class="price">499.000.000 VNĐ</p>
+      <p class="meta">Xe 5 chổ, SUV thể thao, 6 màu: đen - đỏ - xanh dương - trắng - xám kim loại - bạc.</p>
+<section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse; width:100%;">
+    <thead>
+      <tr>
+        <th>Phiên bản</th>
+        <th>Giá xe</th>
+	 <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hyundai Venue 1.0 T-GDi</td>
+        <td style="text-align:right;">499,000,000&nbsp;VND</td>
+	<td>10,000,000</td>
+      </tr>
+      <tr>
+        <td>Hyundai Venue 1.0 T-GDi Đặc biệt</td>
+        <td style="text-align:right;">539,000,000&nbsp;VND</td>
+	<td>12,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+        <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+    </article>
+    
+    <article class="product" data-name="Hyundai Tucson">
+      <article class="product">
+  <img src="images/tucson.png" style="width:100%; border-radius:10px;">
+  <h3>Hyundai Tucson</h3>
+  <p class="price">769.000.000 VND</p>
+  <p class="meta">SUV cao cấp, 7 màu: đen - XD - đỏ đô - vàng cát - bạc - xanh lục bảo - trắng.
+  </p>
+<section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse;">
+    <thead>
+      <tr>
+       <th>Phiên bản</th>
+        <th>Giá xe</th>
+	 <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>New Tucson 2.0 Xăng TC</td>
+        <td>769,000,000&nbsp;VND</td>
+	<td>26,000,000</td>
+      </tr>
+      <tr>
+        <td>New Tucson 2.0 Xăng ĐB</td>
+        <td>859,000,000&nbsp;VND</td>
+	<td>28,000,000</td>
+      </tr>
+<tr>
+        <td>New Tucson 2.0 Dầu ĐB</td>
+        <td>989,000,000&nbsp;VND</td>
+	
+      </tr>
+      <tr>
+        <td>New Tucson 1.6 Turbo</td>
+        <td>979,000,000&nbsp;VND</td>
+	<td>31,000,000</td>
+      </tr>
+      <tr>
+        <td>New Tucson N-line</td>
+        <td>989,000,000&nbsp;VND</td>
+	<td>32,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+    <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+</article>
+
+
+
+	    </article>
+	   
+   	
+	 <article class="product" data-name="Hyundai Santafe">
+      <img src="images/santafe.png" alt="Hyundai Santafe">
+      <h3>Hyundai Santafe</h3>
+      <p class="price">1.265.000.000 VNĐ</p>
+      <p class="meta">SUV 7 chỗ, thiết kế sang trọng, phong cách độc đáo, 6 màu: đen - đỏ - trắng - vàng cát - xám - xanh dương. </p>
+<section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse; width:100%;">
+    <thead>
+      <tr>
+         <th>Phiên bản</th>
+        <th>Giá xe</th>
+	 <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>All New Santa Fe Exclusive</td>
+        <td style="text-align:right;">1,069,000,000&nbsp;VND</td>
+	
+      </tr>
+      <tr>
+        <td>All New Santa Fe Prestige</td>
+        <td style="text-align:right;">1,265,000,000&nbsp;VND</td>
+	<td>170,000,000</td>
+      </tr>
+      <tr>
+        <td>All New Santa Fe Calligraphy7c</td>
+        <td style="text-align:right;">1,315,000,000&nbsp;VND</td>
+	<td>170,000,000</td>
+      </tr>
+      <tr>
+        <td>All New Santa Fe Calligraphy6c</td>
+        <td style="text-align:right;">1,335,000,000&nbsp;VND</td>
+	
+      </tr>
+      <tr>
+        <td>All New Santa Fe Calligraphy Turbo</td>
+        <td style="text-align:right;">1,365,000,000&nbsp;VND</td>
+	<td>170,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+       <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+    </article>
+
+	 <article class="product" data-name="Hyundai Palisade">
+      <img src="images/palisade.png" alt="Hyundai Palisade">
+      <h3>Hyundai Palisade</h3>
+      <p class="price">1.559.000.000 VNĐ</p>
+      <p class="meta">Động cơ dầu, 6-7 chổ, nâng tầm vị thế, 7 màu: đen - đỏ đô - xanh dương - trắng - xanh bóng đêm - xám kim loại - xanh lục bảo.</p>
+      <section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse; width:100%;">
+    <thead>
+      <tr>
+       <th>Phiên bản</th>
+        <th>Giá xe</th>
+	 <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Palisade Exclusive 7 chỗ</td>
+        <td style="text-align:right;">1,469,000,000&nbsp;VND</td>
+	<td></td>
+      </tr>
+      <tr>
+        <td>Palisade Exclusive 6 chỗ</td>
+        <td style="text-align:right;">1,479,000,000&nbsp;VND</td>
+	<td></td>
+      </tr>
+      <tr>
+        <td>Palisade Prestige 7 chỗ</td>
+        <td style="text-align:right;">1,559,000,000&nbsp;VND</td>
+	<td>40,000,000</td>
+      </tr>
+      <tr>
+<td>Palisade Prestige 6 chỗ</td>
+        <td style="text-align:right;">1,589,000,000&nbsp;VND</td>
+	<td>40,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+   <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+    </article>
+
+	 
+		 <article class="product" data-name="Hyundai Stargazer">
+      <img src="images/stargazer.png" alt="Hyundai Stargazer">
+      <h3>Hyundai Stargazer</h3>
+      <p class="price">489.000.000 VNĐ</p>
+      <p class="meta">Xe 7 chổ, thực dụng, bền bỉ, tiện nghi, phù hợp nhu cầu gia đình, 5 màu: trắng - đen - bạc - đỏ - xám.</p>
+<section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse; width:100%;">
+    <thead>
+      <tr>
+         <th>Phiên bản</th>
+        <th>Giá xe</th>
+	 <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+	 <tr>
+        <td>Hyundai Stargazer TC</td>
+        <td style="text-align:right;">489,000,000&nbsp;VND</td>
+	<td>19,000,000</td>
+      </tr>
+      <tr>
+        <td>Hyundai Stargazer Đặc biệt</td>
+        <td style="text-align:right;">569,000,000&nbsp;VND</td>
+	<td>21,000,000</td>
+      </tr>
+      <tr>
+        <td>Hyundai Stargazer Cao cấp</td>
+        <td style="text-align:right;">615,000,000&nbsp;VND</td>
+	<td>22,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+       <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+    </article>
+
+	 <article class="product" data-name="Hyundai Custin">
+      <img src="images/custin.png" alt="Hyundai Custin">
+      <h3>Hyundai Custin</h3>
+      <p class="price">820.000.000 VNĐ</p>
+      <p class="meta">Xe lớn, rộng rãi, ngoại hình nổi bật.</p>
+<section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse; width:100%;">
+    <thead>
+      <tr>
+        <th>Phiên bản</th>
+        <th>Giá xe</th>
+	 <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hyundai Custin 1.5T-GDi TC</td>
+        <td style="text-align:right;">820,000,000&nbsp;VND</td>
+	<td>21,000,000</td>
+      </tr>
+      <tr>
+        <td>Custin 1.5T-GDi Đặc biệt</td>
+        <td style="text-align:right;">915,000,000&nbsp;VND</td>
+	<td>24,000,000</td>
+      </tr>
+      <tr>
+        <td>Custin 2.0T-GDi Cao cấp</td>
+        <td style="text-align:right;">950,000,000&nbsp;VND</td>
+	<td>25,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+      <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+    </article>
+
+
+	   
+	 <article class="product" data-name="Hyundai Elantra">
+      <img src="images/elantra.png" alt="Hyundai Elantra">
+      <h3>Hyundai Elantra</h3>
+      <p class="price">639.000.000 VNĐ</p>
+      <p class="meta">Sedan thể thao, ngoại hình nổi bật, lái linh hoạt.</p>
+<section class="price-table">
+  <h2>Cụ thể:</h2>
+
+  <table border="1" style="border-collapse: collapse; width:100%;">
+    <thead>
+      <tr>
+        <th>Phiên bản</th>
+        <th>Giá xe</th>
+	 <th>Khuyến mãi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hyundai Elantra 1.6 AT TC</td>
+        <td style="text-align:right;">599,000,000&nbsp;VND</td>
+</tr>
+      <tr>
+        <td>Hyundai Elantra 1.6 AT</td>
+        <td style="text-align:right;">669,000,000&nbsp;VND</td>
+      </tr>
+      <tr>
+        <td>Hyundai Elantra 2.0 AT</td>
+        <td style="text-align:right;">729,000,000&nbsp;VND</td>
+      </tr>
+      <tr>
+        <td>Hyundai Elantra N Line</td>
+        <td style="text-align:right;">799,000,000&nbsp;VND</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+       <a class="btn" href="https://zalo.me/0943533613" target="_blank">
+    Báo giá chi tiết
+</a>
+
+    </article>
+
+
+</div> <!-- đóng .products -->
+
+<div class="contact-strip">
+  <div class="container inner">
+    <a href="tel:0943533613">📞 Gọi ngay</a>
+    <a href="https://zalo.me/0943533613" target="_blank">💬 Zalo</a>
+    <a href="tel:0943533613">📝 Báo giá chi tiết</a>
+  </div>
+</div>
+
+
+
+<script src="script.js"></script>
+
+<script>
+let images = [
+  "images/creta.png",
+  "images/accent.png",
+  "images/grand-i10-sedan.png"
+];
+
+let titles = [
+  "HYUNDAI CRETA",
+  "HYUNDAI ACCENT",
+  "HYUNDAI i10"
+];
+
+let index = 0;
+
+setInterval(() => {
+  index++;
+  if(index >= images.length) index = 0;
+
+  document.getElementById("bannerImg").src = images[index];
+  document.getElementById("bannerTitle").innerText = titles[index];
+
+}, 3000);
+</script>
+
+<script>
+const banners = [
+  {
+    img: "images/tucson1.png",
+    title: "HYUNDAI TUCSON",
+    desc: "Thiết kế hiện đại."
+  },
+  {
+    img: "images/creta1.png",
+    title: "HYUNDAI CRETA",
+    desc: "SUV 5 chỗ năng động."
+  },
+{
+    img: "images/custin1.png",
+    title: "HYUNDAI CUSTIN",
+    desc: "Tận hưởng mọi hành trình."
+  },
+{
+    img: "images/santafe1.png",
+    title: "HYUNDAI SANTAFE",
+    desc: "Mở đam mê, thỏa khí chất."
+  },
+{
+    img: "images/palisade1.png",
+    title: "HYUNDAI PALISADE",
+    desc: "Nâng tầm vị thế."
+  },
+  {
+    img: "images/accent1.png",
+    title: "HYUNDAI ACCENT",
+    desc: "Sedan trẻ trung, tiết kiệm."
+  }
+];
+
+let currentBanner = 0;
+
+const bannerImg = document.getElementById("bannerImg");
+const bannerTitle = document.getElementById("bannerTitle");
+const bannerDesc = document.getElementById("bannerDesc");
+const dots = document.querySelectorAll(".dot");
+
+function showBanner(index){
+  bannerImg.src = banners[index].img;
+  bannerTitle.textContent = banners[index].title;
+  bannerDesc.textContent = banners[index].desc;
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+}
+
+setInterval(() => {
+  currentBanner++;
+  if(currentBanner >= banners.length){
+    currentBanner = 0;
+  }
+  showBanner(currentBanner);
+}, 3000);
+</script>
+
+</section>
+</div>
+<footer class="site-footer">
+
+  <!-- Cột 1 -->
+  <div class="footer-col">
+    <h3>Hyundai Bình Dương</h3>
+    <p>Đại lý ủy quyền của Hyundai Thành Công Việt Nam</p>
+    <p>Hotline bán hàng: 0943.533.613</p>
+    <p>Hotline dịch vụ: 0943.533.613</p>
+    <p>Showroom 1S: 48A, Đại lộ Bình Dương, phường Phú Lợi, TPHCM</p>
+    <p>Showroom 3S: 538 đường Hùng Vương, phường Bình Dương, TPHCM</p>
+    <p>Xưởng dịch vụ: 45B, Yersin, phường Thủ Dầu Một, TPHCM</p>
+    <p>Thời gian: 8h00 - 17h00</p>
+  </div>
+
+  <!-- Cột 2 -->
+  <div class="footer-col">
+    <h3>Thông tin</h3>
+    <p>Trang Chủ</p>
+    <p>Giới Thiệu</p>
+    <p>Đăng ký lái thử</p>
+  </div>
+
+  <!-- Cột 3 -->
+  <div class="footer-col">
+    <h3>Liên hệ</h3>
+    <p>Zalo: 0943.533.613</p>
+    <p>Email:thanhthuyhyundaibd@gmail.com</p>
+  </div>
+
+</footer>
+</body>
+</html>
