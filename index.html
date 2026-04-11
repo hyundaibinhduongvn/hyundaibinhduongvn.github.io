@@ -640,8 +640,53 @@ body{
     color: blue;
     padding: 12px 0;
 }
+@media (max-width: 768px) {
+
+    body{
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+
+    .topbar,
+    .container,
+    .product,
+    .product-card,
+    .hero-banner{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .topbar,
+    .product{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    #bannerImg{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .product-card{
+        margin: 0 auto 16px;
+    }
+
+}
+
+html, body{
+    overflow-x: hidden !important;
+}
 
 
+
+	  
 
 
   </style>
