@@ -551,6 +551,48 @@ body{
     padding: 0 !important;
 }
 
+@media (max-width: 768px) {
+
+    body{
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+
+    .topbar,
+    .container,
+    .product,
+    .product-card,
+    .hero-banner{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .topbar,
+    .product{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    #bannerImg{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .product-card{
+        margin: 0 auto 16px;
+    }
+
+
+
+
+
 
 
 </style>
@@ -640,53 +682,34 @@ body{
     color: blue;
     padding: 12px 0;
 }
-@media (max-width: 768px) {
-
-    body{
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-
-    *{
-        box-sizing: border-box;
-    }
-
-    .topbar,
-    .container,
-    .product,
-    .product-card,
-    .hero-banner{
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    .topbar,
-    .product{
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-
-    #bannerImg{
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .product-card{
-        margin: 0 auto 16px;
-    }
-
+#searchInput{
+    width: 100%;
+    max-width: 500px;
+    padding: 14px 18px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    outline: none;
+    display: block;
+    margin: 20px auto;
+    transition: 0.3s;
 }
 
-html, body{
-    overflow-x: hidden !important;
+#searchInput:focus{
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0,123,255,0.3);
+}
+
+@media (max-width: 768px){
+    #searchInput{
+        max-width: 90%;
+        font-size: 16px;
+    }
 }
 
 
 
-	  
+
 
 
   </style>
@@ -731,7 +754,7 @@ html, body{
 	</div>
 
            <nav class="menu">
-          <a href="#san-pham" style="color:blue;">Sản phẩm</a>
+      <a href="#san-pham" style="color:blue;">Sản phẩm</a>
 <a href="https://zalo.me/0943533613" target="_blank" style="color:blue;">Báo giá</a>
 <a href="https://zalo.me/0943533613" target="_blank" style="color:blue;">Liên hệ</a>
       </nav>
@@ -744,7 +767,7 @@ html, body{
   <!-- CHỮ CHẠY -->
   <div class="promo-text">
    <marquee scrollamount="2" style="color:red; font-weight:bold;">
-  🎉 KHUYẾN MÃI: (TỪ NGÀY 11/4/2026 đến hết ngày 30/4/2026) GIẢM GIÁ LÊN ĐẾN 170 TRIỆU ĐỒNG + QUÀ TẶNG + BẢO HIỂM (liên hệ 0943.533.613 để đượctư vấn chi tiết)🎉
+  🎉 KHUYẾN MÃI: TỪ NGÀY 11/4/2026 (đến khi có thông báo mới) GIẢM GIÁ LÊN ĐẾN 170 TRIỆU ĐỒNG + QUÀ TẶNG + BẢO HIỂM (liên hệ 0943.533.613 để đượctư vấn chi tiết)🎉
 </marquee>
 
   </div>
@@ -777,11 +800,12 @@ html, body{
           <h2>Sản phẩm</h2>
           
         </div>
-        <input id="searchInput" class="search" type="text" placeholder="Tìm mẫu xe..." />
+       <input type="text" id="searchInput" placeholder="Tìm mẫu xe..." onkeyup="searchProduct()">
+
       </div>
 
       <div class="products">
-          <article class="product" data-name="Grand i10 Sedan">
+          <article class="product-card" data-name="Grand i10 Sedan">
       <img src="images/grand-i10-sedan.png" alt="Grand i10 Sedan">
       <h3>Grand i10 Sedan</h3>
       <p class="price">455.000.000 VNĐ</p>
@@ -1301,6 +1325,31 @@ html, body{
 
 
 <script src="script.js"></script>
+<script>
+function searchProduct() {
+    const keyword = document.getElementById("searchInput").value.toLowerCase().trim();
+    const products = document.querySelectorAll(".product, .product-card");
+
+    let found = false;
+
+    products.forEach(product => {
+        const name = (product.getAttribute("data-name") || "").toLowerCase().trim();
+
+        if (keyword === "") {
+            product.style.display = "block";
+        } 
+        else if (!found && name.includes(keyword)) {
+            product.style.display = "block";
+            found = true;
+        } 
+        else {
+            product.style.display = "none";
+        }
+    });
+}
+</script>
+
+
 
 <script>
 let images = [
