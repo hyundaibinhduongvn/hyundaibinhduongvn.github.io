@@ -6,17 +6,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <title>Sản phẩm - Hyundai Bình Dương</title>
 <link rel="stylesheet" href="style.css">
 
 <meta name="robots" content="index, follow">
 <meta name="description" content="Tư vấn xe Hyundai Bình Dương...">
 <meta name="keywords" content="Hyundai Bình Dương...">
-<meta name="author" content="Thủy Hyundai Bình Dương">
+<meta name="author" content="Thùy Hyundai Bình Dương">
 
 <!-- Facebook -->
-<meta property="og:title" content="Thủy Hyundai Bình Dương">
+<meta property="og:title" content="Thùy Hyundai Bình Dương">
 <meta property="og:description" content="Xem giá xe Hyundai mới nhất...">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hyundaibinhduongvn.github.io/">
@@ -326,7 +325,12 @@ font-size: 15px;
 
 }
 
-.hero-text{ position: absolute !important; left: 12px !important; top: 12px !important; transform: none !important; z-index: 3 !important; }
+.promo-text {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  z-index: 10;
+}
 
 .hero-text {
   display: flex;
@@ -1133,12 +1137,6 @@ font-size:14px;
 </head>
 <body>
 
-  <div class="promo-top">
-   <marquee scrollamount="2" style="color:red; font-weight:bold;">
-  🎉 KHUYẾN MÃI: TỪ NGÀY 11/4/2026 đến hết ngày 30/4/2026 - GIẢM GIÁ LÊN ĐẾN 170 TRIỆU ĐỒNG + QUÀ TẶNG + BẢO HIỂM (liên hệ 0943.533.613 để đượctư vấn chi tiết)🎉
-</marquee>
-
-  </div>
 
   <header class="topbar">
     <div class="container row">
@@ -1161,7 +1159,40 @@ font-size:14px;
   
 <section class="hero-banner">
 
-  
+  <!-- CHỮ CHẠY -->
+  <div class="promo-text">
+   <marquee scrollamount="2" style="color:red; font-weight:bold;">
+  🎉 KHUYẾN MÃI: TỪ NGÀY 11/4/2026 đến hết ngày 30/4/2026 - GIẢM GIÁ LÊN ĐẾN 170 TRIỆU ĐỒNG + QUÀ TẶNG + BẢO HIỂM (liên hệ 0943.533.613 để đượctư vấn chi tiết)🎉
+</marquee>
+
+  </div>
+
+  <div class="hero-text">
+    <h1 id="bannerTitle">HYUNDAI TUCSON</h1>
+    <p id="bannerDesc">Thiết kế hiện đại.</p>
+  </div>
+
+  <img id="bannerImg" src="images/tucson.png">
+
+</section>
+
+ 
+
+  <div class="banner-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+   
+  </section>
+
+  <section class="section" id="san-pham">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Sản phẩm</h2>
           
         </div>
        <input type="text" id="searchInput" placeholder="Tìm mẫu xe..." onkeyup="searchProduct()">
