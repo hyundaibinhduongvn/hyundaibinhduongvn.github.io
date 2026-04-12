@@ -85,29 +85,12 @@
 }
 
 
-.promo-text{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    text-align: center;
-
-    background: rgba(255, 255, 255, 0.8); /* nền trắng sáng */
-    padding: 8px 0;
-}
 
 
-.promo-text marquee{
-    width: 100%;
-    display: block;
-}
 
-.promo-text{
-    background: rgba(0,0,0,0.1);
-    color: blue;
-    padding: 12px 0;
-}
+
+
+
 #searchInput{
     width: 100%;
     max-width: 500px;
@@ -159,19 +142,9 @@
 
 
 /* chữ chạy
-.promo-text {
-  position: absolute;
-  top: 10px; /* chỉnh cao thấp ở đây */
-  width: 100%;
-  text-align: center;
-  z-index: 10;
-}
 
-.promo-text marquee {
-  color: red;
-  font-size: 18px; /* chữ to */
-  font-weight: bold;
-}
+
+
 
 
 .hero-text{
@@ -316,21 +289,9 @@ font-size: 15px;
   line-height:1.6;
 }
 
-.promo-text {
-  background: #fff3f3;
-  padding: 8px 0;
-}
-.promo-text {
-  margin-top: 10px;
 
-}
 
-.promo-text {
-  position: absolute;
-  top: 10px;
-  width: 100%;
-  z-index: 10;
-}
+
 
 .hero-text {
   display: flex;
@@ -408,11 +369,7 @@ font-size: 15px;
 
 
     /* Khuyến mãi */
-    .promo-text {
-        font-size: 13px;
-        padding: 5px;
-    }
-
+ 
     /* Tiêu đề sản phẩm */
     h2 {
         font-size: 22px;
@@ -431,16 +388,9 @@ font-size: 15px;
     }
 }
 
-.promo-text {
-    white-space: nowrap;
-    overflow: hidden;
-}
 
-.promo-text span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: chạy 18s linear infinite;
-}
+
+
 
 @keyframes chạy {
     0% { transform: translateX(0); }
@@ -451,23 +401,12 @@ font-size: 15px;
 
 
     /* Chữ khuyến mãi */
-    .promo-text {
-        font-size: 13px !important;
-        padding: 6px 0 !important;
-        overflow: hidden;
-        white-space: nowrap;
-    }
+  
 
-    .promo-text marquee {
-        font-size: 15px !important;
-        scroll-behavior: smooth;
-    }
+  
 
     /* Nếu bạn đang dùng span chạy bằng animation */
-    .promo-text span {
-        animation-duration: 18s !important;
-    }
-
+ 
     /* Banner / slider */
     .hero-slider,
     .hero-banner,
@@ -554,16 +493,6 @@ font-size: 15px;
         padding: 12px 16px !important;
 min-width: 140px;
         text-align: center !important;
-    }
-}
-
-.promo-text {
-    background: #ffecec;
-    color: red;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 6px 0;
-}
 
 }
 @media (max-width: 768px) {
@@ -573,9 +502,17 @@ min-width: 140px;
     margin: 0 !important;
     background: transparent !important;
 }
-}
 
- 
+ #bannerImg {
+    width: 100% !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    max-width: 100% !important;
+    max-height: none !important;
+}
 body {
 margin: 0 !important;
  }
@@ -626,20 +563,42 @@ margin: 0 !important;
   text-align: center;
 }
 
- promo-text marquee {
-  font-size: 18px !important;   /* vừa mắt mobile */
-  color: red !important;        /* màu khuyến mãi */
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  line-height: 1.5;
-}
+
 @media (max-width: 768px) {
-  .promo-text marquee {
-    font-size: 16px !important;
-  }
+ 
 }
 
 
+.hero-banner{
+    position: relative !important;
+    display: block !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+}
+
+.hero-banner img,
+#bannerImg{
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+    border-radius: 0 !important;
+}
+
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
 @media (max-width: 768px) {
 
@@ -666,7 +625,6 @@ margin: 0 !important;
     .product{
         padding-left: 12px;
         padding-right: 12px;
-    }
     }
 
     #bannerImg{
@@ -769,23 +727,9 @@ padding:0;
 border-radius:0;
 }
 
-.promo-text{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-z-index:10;
-background:rgba(255,255,255,0.88);
-backdrop-filter:blur(4px);
-padding:8px 0;
-text-align:center;
-}
 
-.promo-text marquee{
-color:var(--accent);
-font-weight:700;
-font-size:15px;
-}
+
+
 
 /* Main container */
 .container,
@@ -892,13 +836,23 @@ border-radius:12px;
 }
 
 .price-table th{
-background:linear-gradient(135deg, var(--brand), var(--brand-2));
+
 color:#fff;
 padding:12px 10px;
 font-size:14px;
 text-align:center;
 }
+.price-table th:nth-child(1){
+    background: #0b2a5b !important;
+}
 
+.price-table th:nth-child(2){
+    background: #1e4fa3 !important;
+}
+
+.price-table th:nth-child(3){
+    background: #4a79d8 !important;
+}
 .price-table td{
 padding:12px 10px;
 border:1px solid var(--border);
@@ -984,13 +938,9 @@ gap:14px;
 height:240px !important;
 }
 
-.promo-text{
-padding:6px 0;
-}
 
-.promo-text marquee{
-font-size:13px;
-}
+
+
 
 .container,
 main,
@@ -1048,82 +998,25 @@ padding:11px 12px;
 font-size:14px;
 }
 }
+
+body{ background: yellow !important; }
+header{ background: red !important; }
+.btn{ background: green !important; color:#fff !important; }
+
 .hero-banner{
     position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: hidden !important;
-    background: #fff !important;
 }
 
-#bannerImg,
-.hero-banner img{
-    display: block !important;
-    width: 100% !important;
-    height: 420px !important;
-    object-fit: cover !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+
+
+
+.hero-banner{
     position: relative !important;
-    z-index: 1 !important;
+    padding-top: 28px !important;
 }
 
 
 
-
-
-#bannerTitle{
-    color: blue .hero-text h1{
-    font-size: 16px !important;
-}
-
-.hero-text p{
-    font-size: 18px !important;
-}
- !important;
-    font-size: 12px !important;
-    text-align: left !important;
-    padding-left: 40px !important;
-}
-
-#bannerDesc{
-    color: blue !important;
-    font-size: 12px !important;
-    text-align: left !important;
-    padding-left: 40px !important;
-}
-@media (max-width: 768px){
-
-    .hero-banner{
-        position: relative;
-        width: 100%;
-        height: 220px !important;
-        overflow: hidden;
-    }
-
-    .hero-banner img,
-    #bannerImg{
-        width: 100%;
-        height: 220px !important;
-        object-fit: cover !important;
-        object-position: center center !important;
-        display: block;
-    }
-
-    #bannerTitle{
-        font-size: 28px !important;
-        line-height: 1.2;
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-    }
-
-    #bannerDesc{
-        font-size: 8px !important;
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-    }
-}
 
 
 
