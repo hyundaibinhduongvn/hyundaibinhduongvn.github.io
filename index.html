@@ -564,35 +564,55 @@ margin: 0 !important;
 }
 
 
-@media (max-width: 768px) {
- 
-}
+@media (max-width: 768px){
 
+    .hero-banner{
+        position: relative !important;
+        width: 100% !important;
+        height: 220px !important;
+        min-height: 220px !important;
+        overflow: hidden !important;
+        background: #fff !important;
+    }
 
-.hero-banner{
-    position: relative !important;
-    display: block !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    min-height: 100vh !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    background: transparent !important;
-}
+    #bannerImg,
+    .hero-banner img{
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        height: 220px !important;
+        min-height: 220px !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
 
-.hero-banner img,
-#bannerImg{
-    width: 100vw !important;
-    height: 100vh !important;
-    min-height: 100vh !important;
-    object-fit: cover !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    max-width: none !important;
-    max-height: none !important;
-    border-radius: 0 !important;
+    .hero-text{
+        position: absolute !important;
+        left: 16px !important;
+        bottom: 16px !important;
+        top: auto !important;
+        transform: none !important;
+        z-index: 2 !important;
+    }
+
+    #bannerTitle{
+        font-size: 28px !important;
+        color: #123a7a !important;
+        text-align: left !important;
+        padding: 0 !important;
+        margin: 0 0 6px 0 !important;
+    }
+
+    #bannerDesc{
+        font-size: 15px !important;
+        color: #123a7a !important;
+        text-align: left !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 }
 
 body{
